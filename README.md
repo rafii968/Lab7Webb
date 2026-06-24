@@ -1,7 +1,7 @@
 # Lab7Webb
 MUHAMAD SAEFUL RAFII 312410374
-# Laporan Praktikum: Sistem Pengelolaan Artikel (Modul 1-4)
-## 🛠️ Alur Pengerjaan & Penjelasan Halaman
+# Laporan Praktikum: Sistem Pengelolaan Artikel (Modul 1-14)
+##  Alur Pengerjaan & Penjelasan Halaman
 
 ### 1. Inisialisasi Project (Modul 1 & 2)
 Pertama-tama, saya membuat struktur dasar **CodeIgniter 4**. Tahap ini adalah penyesuaian perintah praktek pertama untuk memastikan server lokal (Apache/MySQL) siap digunakan.
@@ -125,9 +125,35 @@ Pada modul ini saya menambahkan fitur upload gambar pada form tambah artikel. Ga
 <img width="959" height="441" alt="image" src="https://github.com/user-attachments/assets/610c13ab-25c5-4b0f-a2e9-5d8252fce8f0" />
 
 Langkah 1 — Buat folder penyimpanan gambar
+<img width="959" height="441" alt="Screenshot 2026-06-24 121255" src="https://github.com/user-attachments/assets/0eb83211-a2de-4864-b64a-efac94e4b9e4" />
 
 Buat folder baru di dalam public/:
 ci4/public/gambar/
+
+### 9. Halaman Data Artikel AJAX (Modul 8)
+[cite_start]Halaman ini menerapkan teknologi Asynchronous JavaScript and XML untuk manajemen data artikel yang lebih dinamis tanpa proses muat ulang halaman[cite: 12, 13].
+* [cite_start]**Tampilan Tabel AJAX:** Menyajikan daftar artikel yang ditarik secara real-time dari server dalam format JSON melalui manipulasi data baris tabel menggunakan jQuery[cite: 24, 26, 44].
+<img width="959" height="470" alt="Screenshot 2026-06-24 143404" src="https://github.com/user-attachments/assets/41da83c2-501a-4c96-a09b-0dec0f0375c3" />
+
+* [cite_start]**Fungsi Hapus & Tambah Pop-up:** Menghapus baris artikel langsung dengan method DELETE setelah mendapatkan konfirmasi pengguna, serta menyediakan modal form interaktif untuk entri data baru secara instan tanpa interupsi reload[cite: 145, 146, 151].
+
+### 10. Halaman Manajemen Admin - Pencarian & Pagination AJAX (Modul 9)
+[cite_start]Halaman pusat kendali admin yang telah dioptimalkan performanya menggunakan modifikasi asinkron untuk penyaringan data skala besar[cite: 177, 181].
+* [cite_start]**Fitur Pencarian & Filter Kategori:** Menyediakan kolom input judul dan drop-down kategori yang secara otomatis mengirim parameter pencarian dan memperbarui isi tabel secara instan[cite: 247, 347, 348].
+<img width="959" height="436" alt="Screenshot 2026-06-24 145716" src="https://github.com/user-attachments/assets/b2e6f040-f7d6-4dfb-854a-afc02750be50" />
+
+* [cite_start]**Navigasi Halaman (Pagination):** Memisahkan kumpulan data artikel ke dalam beberapa segmen halaman menggunakan template pagination yang tautannya dikontrol menggunakan skrip jQuery agar berpindah halaman tanpa kedipan browser[cite: 234, 326, 327].
+<img width="959" height="379" alt="Screenshot 2026-06-24 145736" src="https://github.com/user-attachments/assets/f5b8c6db-c92d-4f42-a54b-a3f28d842819" />
+
+### 11. Pengujian RESTful API Artikel (Modul 10)
+Halaman ini berfokus pada arsitektur backend sebagai REST Server yang menyediakan endpoint data berbasis JSON untuk integrasi antar-aplikasi tanpa interface HTML.
+* **Fitur Endpoint GET (Fetch Data):** Menampilkan seluruh data artikel maupun spesifik berdasarkan ID dalam format standar array JSON melalui pengujian HTTP Request.
+<img width="959" height="475" alt="image" src="https://github.com/user-attachments/assets/3f026b9e-04b7-4986-a58d-5cb936994a1f" />
+
+* **Fitur Endpoint POST & DELETE:** Memproses penambahan data artikel baru ke database via request body, serta menghapus data berdasarkan parameter URL ID secara asinkron menggunakan client agent.
+<img width="375" height="212" alt="image" src="https://github.com/user-attachments/assets/bf5668e2-85a7-4e1d-9244-0440451083a9" />
+<img width="959" height="209" alt="image" src="https://github.com/user-attachments/assets/96d84dab-4ab0-4c36-8781-95eb62bcbb8a" />
+
 
 
 
