@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?= $title; ?></title>
-    <link rel="stylesheet" href="<?= base_url('/style.css');?>">
+    <title><?= $title ?? 'Portal Berita'; ?></title>
+    <link rel="stylesheet" href="/lab11_php_ci/ci4/public/style.css">
 </head>
 <body>
     <div id="container">
@@ -23,7 +23,7 @@
             </section>
             <aside id="sidebar">
                 <div class="widget-box">
-    <?= view_cell('\App\Cells\ArtikelTerkini::display') ?>
+    <?= view_cell('\App\Cells\ArtikelTerkini::render') ?>
 </div>
                 <div class="widget-box">
                     <h3 class="title">Widget Header</h3>

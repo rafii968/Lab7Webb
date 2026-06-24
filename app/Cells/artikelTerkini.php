@@ -6,7 +6,7 @@ use App\Models\ArtikelModel;
 
 class ArtikelTerkini
 {
-    public function display()
+    public function render()
     {
         $model = new ArtikelModel();
         // Ambil 5 data terbaru
