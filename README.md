@@ -68,6 +68,8 @@ Dan di view admin_index.php ditambahkan form pencarian dan link pagination:
 
 <!-- Link Pagination -->
 <?= $pager->only(['q'])->links(); ?>
+<img width="959" height="474" alt="image" src="https://github.com/user-attachments/assets/a2d453dd-63d2-4ef6-98ee-10d309259522" />
+
 
 ### 7. Relasi Tabel & Query Builder (Modul 6)
 Pada modul ini saya memperdalam penggunaan Model, Relasi Tabel, dan Query Builder di CodeIgniter 4. Konsep utamanya adalah menghubungkan tabel artikel dengan tabel kategori menggunakan relasi One-to-Many.
@@ -115,53 +117,18 @@ Fungsi: Dengan query JOIN ini, kita tidak perlu melakukan 2 query terpisah. Cuku
 left join digunakan agar artikel yang belum punya kategori tetap muncul (tidak hilang dari daftar).
 
 Struktur Direktori Akhir
-ci4/
-├── app/
-│   ├── Cells/
-│   │   └── ArtikelTerkini.php          ← View Cell sidebar (Modul 3)
-│   ├── Config/
-│   │   ├── Filters.php                 ← Registrasi filter auth & csrf
-│   │   ├── Routes.php                  ← Semua routing aplikasi
-│   │   └── Security.php               ← Konfigurasi CSRF
-│   ├── Controllers/
-│   │   ├── Artikel.php                 ← Controller utama CRUD + pagination
-│   │   ├── Home.php
-│   │   ├── Page.php
-│   │   └── User.php                    ← Controller login & logout
-│   ├── Filters/
-│   │   └── Auth.php                    ← Filter proteksi halaman admin
-│   ├── Models/
-│   │   ├── ArtikelModel.php            ← Model artikel + query join kategori
-│   │   ├── KategoriModel.php           ← Model kategori (Modul 6)
-│   │   └── UserModel.php              ← Model user login
-│   └── Views/
-│       ├── artikel/
-│       │   ├── admin_index.php         ← Tabel admin + search + pagination
-│       │   ├── detail.php             ← Detail artikel
-│       │   ├── form_add.php           ← Form tambah artikel + kategori
-│       │   ├── form_edit.php          ← Form edit artikel + kategori
-│       │   └── index.php              ← Daftar artikel publik
-│       ├── components/
-│       │   └── artikel_terkini.php    ← Komponen sidebar artikel terkini
-│       ├── layout/
-│       │   └── main.php              ← Layout utama (extend/section)
-│       ├── template/
-│       │   ├── header.php
-│       │   └── footer.php
-│       ├── user/
-│       │   └── login.php             ← Halaman login admin
-│       ├── about.php
-│       ├── contact.php
-│       └── home.php
-└── public/
-    └── style.css                      ← CSS keseluruhan tampilan
+<img width="359" height="428" alt="image" src="https://github.com/user-attachments/assets/cea6c573-160a-4f0b-a0c6-942c322b7bca" />
 
 ###  8. Upload File Gambar (Modul 7)
 
 Pada modul ini saya menambahkan fitur upload gambar pada form tambah artikel. Gambar yang diupload akan disimpan di folder public/gambar/ dan nama filenya disimpan ke database.
+<img width="959" height="441" alt="image" src="https://github.com/user-attachments/assets/610c13ab-25c5-4b0f-a2e9-5d8252fce8f0" />
+
 Langkah 1 — Buat folder penyimpanan gambar
 
 Buat folder baru di dalam public/:
 ci4/public/gambar/
+
+
 
 
