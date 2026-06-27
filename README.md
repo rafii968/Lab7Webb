@@ -28,8 +28,8 @@ Fungsi: Sebagai media informasi publik di mana user umum hanya diberikan hak aks
 Pemberian batasan hak akses halaman manajemen untuk mengamankan data sensitif aplikasi.
 Fitur Login Admin: Menyediakan form validasi akun admin yang telah terintegrasi dengan komponen UI Bootstrap 5.
 Dashboard Area: Membuka area kendali internal (CRUD data artikel) setelah lolos verifikasi sistem. Halaman ini diproteksi ketat menggunakan Auth Filter; pengguna ilegal yang belum login otomatis ditendang keluar jika mencoba menembak URL admin secara langsung.
-<img width="959" height="436" alt="Screenshot 2026-06-24 145716" src="https://github.com/user-attachments/assets/5230d23a-f2f0-41df-afee-df18ce3de77e" />
 
+<img width="959" height="436" alt="Screenshot 2026-06-24 145716" src="https://github.com/user-attachments/assets/5230d23a-f2f0-41df-afee-df18ce3de77e" />
 
 ## 3. Modul Data Artikel Berbasis AJAX (Modul 8)
 Penerapan manipulasi data asinkronus menggunakan jQuery AJAX untuk memproses data tanpa perlu refresh halaman.
