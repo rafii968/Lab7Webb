@@ -1,61 +1,54 @@
-# CodeIgniter 4 Framework
+ ## muhamamad saeful rafii (312410374)
+ # Lab7Web - Backend Management Artikel & RESTful API
 
-## What is CodeIgniter?
+Repositori ini berisi proyek pengembangan **Backend & REST Server** menggunakan **Framework CodeIgniter 4**. Proyek ini mencakup seluruh rangkaian praktikum dari pembuatan modul antarmuka web standar (MVC), proteksi keamanan login admin, pengoptimalan performa halaman menggunakan AJAX JQuery, hingga penyediaan layanan data berbasis arsitektur RESTful API.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+---
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## 1. Arsitektur & Struktur Direktori Utama
+Proyek ini dibangun menggunakan pola desain **Model-View-Controller (MVC)** bawaan CodeIgniter 4 dengan struktur inti sebagai berikut:
+```text
+lab7_php_ci/
+├── app/
+│   ├── Config/          # Konfigurasi sistem (Routes.php, Pager.php, Filters.php)
+│   ├── Controllers/     # Logika pengontrol (Artikel.php, AjaxController.php, Post.php)
+│   ├── Filters/         # Filter keamanan (Auth.php)
+│   ├── Models/          # Manipulasi data database (ArtikelModel.php, KategoriModel.php)
+│   └── Views/           # Template antarmuka HTML (artikel/, ajax/, template/)
+└── public/              # Endpoint akses publik browser
+## 2. Implementasi Per Modul Praktikum
+## 1. Halaman User / Front-End (Modul 3)
+Halaman utama website yang dirancang untuk diakses oleh pengunjung umum secara publik.
+Tampilan Berita: Menampilkan daftar artikel arsip sejarah Indonesia (era VOC hingga kemerdekaan) yang diambil langsung dari database.
+Fungsi: Sebagai media informasi publik di mana user umum hanya diberikan hak akses membaca (read-only) tanpa bisa memanipulasi data konten.
+<img width="959" height="474" alt="Screenshot 2026-06-24 113421" src="https://github.com/user-attachments/assets/fd078bf7-1600-4580-a261-18020aeb6fab" />
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## 2. Autentikasi Keamanan & Dashboard Admin (Modul 4)
+Pemberian batasan hak akses halaman manajemen untuk mengamankan data sensitif aplikasi.
+Fitur Login Admin: Menyediakan form validasi akun admin yang telah terintegrasi dengan komponen UI Bootstrap 5.
+Dashboard Area: Membuka area kendali internal (CRUD data artikel) setelah lolos verifikasi sistem. Halaman ini diproteksi ketat menggunakan Auth Filter; pengguna ilegal yang belum login otomatis ditendang keluar jika mencoba menembak URL admin secara langsung.
+<img width="959" height="436" alt="Screenshot 2026-06-24 145716" src="https://github.com/user-attachments/assets/5230d23a-f2f0-41df-afee-df18ce3de77e" />
 
-## Important Change with index.php
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## 3. Modul Data Artikel Berbasis AJAX (Modul 8)
+Penerapan manipulasi data asinkronus menggunakan jQuery AJAX untuk memproses data tanpa perlu refresh halaman.
+Fitur Tampil & Hapus Instan: Seluruh data ditampung dalam format JSON via request internal. Tombol hapus memicu HTTP DELETE asinkron yang langsung menghilangkan baris tabel seketika setelah disetujui pengguna.
+<img width="959" height="470" alt="Screenshot 2026-06-24 143404" src="https://github.com/user-attachments/assets/40662597-5651-43eb-90a1-fc96bde62334" />
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
 
-**Please** read the user guide for a better explanation of how CI4 works!
+## 4. Pencarian & Pagination Otomatis AJAX (Modul 9)
+Optimasi performa halaman manajemen admin dalam menangani data records berskala besar.
+Fitur Search & Filter: Menghubungkan kolom input pencarian judul dan drop-down kategori dengan skrip penangkap data AJAX. Komponen tabel akan otomatis ber-render ulang menyaring artikel yang sesuai secara instan begitu kolom diisi atau kategori dipilih.
+Pagination Terintegrasi: Pembagian segmentasi halaman dikelola dinamis melalui pendaftaran template bootstrap_full pada konfigurasi engine $templates (app/Config/Pager.php) agar perpindahan link halaman berjalan mulus tanpa kedipan browser.
+<img width="959" height="436" alt="Screenshot 2026-06-24 145716" src="https://github.com/user-attachments/assets/14ce7263-1ce0-4cd2-99ee-016ec49a7945" />
+<img width="959" height="379" alt="Screenshot 2026-06-24 145736" src="https://github.com/user-attachments/assets/edd1bf3a-22c4-4fc7-86cc-8cd89de85575" />
 
-## Repository Management
+## 5. Penyediaan Layanan RESTful API Server (Modul 10)
+Transformasi sistem backend murni menjadi penyedia data mentah (Web Service) guna mendukung arsitektur aplikasi modern terpisah.
+Fungsi Endpoint Resource: Memanfaatkan kelas bawaan ResourceController pada file app/Controllers/Post.php dan pemetaan otomatis $routes->resource('post') untuk membuka endpoint API standar global (GET, POST, PUT, DELETE).
+<img width="959" height="209" alt="Screenshot 2026-06-24 202340" src="https://github.com/user-attachments/assets/ad965609-5b73-41fb-abbc-66c8faf8b6ce" />
+<img width="375" height="212" alt="Screenshot 2026-06-24 202319" src="https://github.com/user-attachments/assets/d9dada54-a47f-461d-9298-d36e77882aae" />
+<img width="959" height="475" alt="Screenshot 2026-06-24 202256" src="https://github.com/user-attachments/assets/4bf0e575-68eb-4d6a-b472-487232fd1e1c" />
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Contributing
-
-We welcome contributions from the community.
-
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
-
-## Server Requirements
-
-PHP version 8.2 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+Pengujian HTTP Client Agent: Seluruh data dikembalikan dalam wujud respons kode status standar protokol HTTP (seperti 200 OK atau 201 Created) berformat data JSON yang diuji menggunakan Postman untuk memastikan kesiapan integrasi dengan aplikasi frontend eksternal (VueJS).
